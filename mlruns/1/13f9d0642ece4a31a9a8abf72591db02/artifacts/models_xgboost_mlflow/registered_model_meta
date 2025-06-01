@@ -1,0 +1,2 @@
+model_name: nyc_taxi_duration_prediction_xgboost_model
+model_version: '4'

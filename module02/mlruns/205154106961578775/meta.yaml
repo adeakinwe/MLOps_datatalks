@@ -1,0 +1,6 @@
+artifact_location: file:///Users/mac/Projects/MLops_datatalks/module02/mlruns/205154106961578775
+creation_time: 1749608810455
+experiment_id: '205154106961578775'
+last_update_time: 1749608810455
+lifecycle_stage: active
+name: nyc_greentaxi_2023tripdata_experiment

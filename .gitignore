@@ -9,3 +9,5 @@ preprocessor
 sqlite/
 mlflow.db
 models.preprocessor.b
+.virtual_documents/
+.ipynb_checkpoints/

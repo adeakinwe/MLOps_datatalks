@@ -1,9 +1,9 @@
 import requests
 
 ride = {
-    'PULocationID' : 20,
-    'DOLocationID' : 31,
-    'trip_distance' : 23
+    'PULocationID' : 110,
+    'DOLocationID' : 131,
+    'trip_distance' : 39
 }
 
 url = 'http://localhost:5005/predict'

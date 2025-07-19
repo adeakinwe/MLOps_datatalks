@@ -25,3 +25,6 @@ cd ~/Projects/MLops_pipeline/
 # Create a new virtual environment using Python 3.11
 /usr/local/bin/python3.11 -m venv mlflow-311venv
 source mlflow-311venv/bin/activate
+
+# download dataset
+curl -O "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-02.parquet"

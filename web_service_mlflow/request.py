@@ -8,4 +8,10 @@ ride = {
 
 url = 'http://localhost:5005/predict'
 response = requests.post(url, json=ride)
-print(response.json())
+try:
+    print(response.json())
+except requests.exceptions.JSONDecodeError:
+    print(response)
+    print("Raw Response Text:", response.text)
+    print("Response is not valid JSON.")
+#print(response.json())

@@ -8,6 +8,10 @@ module02/
 preprocessor
 sqlite/
 mlflow.db
+*.bak
+*.db
+*.b
 models.preprocessor.b
 .virtual_documents/
 .ipynb_checkpoints/
+__pycache__/

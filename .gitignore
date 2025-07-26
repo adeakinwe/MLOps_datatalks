@@ -4,6 +4,7 @@ output/
 green_tripdata/
 mlruns/
 models/
+models_xgboost_mlflow/
 module02/
 preprocessor
 sqlite/

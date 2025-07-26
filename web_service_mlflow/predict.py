@@ -6,15 +6,15 @@ from mlflow.tracking import MlflowClient
 with open('lin_reg_green_tripdata.bin', 'rb') as f_in:
     (dv, model) = pickle.load(f_in)
 
-RUN_ID = 'ca613be92280409287899eaab84e698f'
+RUN_ID = 'dfd9cee9381844b2a8e3dbb2c25db6fe'
 
 from mlflow.tracking import MlflowClient
 
-client = MlflowClient(tracking_uri="http://localhost:5001")
-run = client.get_run("ca613be92280409287899eaab84e698f")
+client = MlflowClient(tracking_uri="http://localhost:5004")
+run = client.get_run("dfd9cee9381844b2a8e3dbb2c25db6fe")
 print(run.info)
 
-MLFLOW_TRACKING_URI = 'http://localhost:5001'
+MLFLOW_TRACKING_URI = 'http://localhost:5004'
 mlflow.set_tracking_uri(f'{MLFLOW_TRACKING_URI}')
 client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
 path = client.download_artifacts(run_id=RUN_ID, path='preprocessor/models.preprocessor.b')

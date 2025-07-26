@@ -1,17 +1,18 @@
 import pickle
 from flask import Flask, request, jsonify
 import mlflow
+import mlflow.sklearn
 from mlflow.tracking import MlflowClient
 
 MLFLOW_TRACKING_URI = 'http://localhost:5004'
-RUN_ID = '16b9d6323465410db3f39d3e3b849a60'
+RUN_ID = '79d08684e9e441dfbc066847af4de142'
 
 mlflow.set_tracking_uri(f'{MLFLOW_TRACKING_URI}')
 
 
-logged_model = f'runs:/{RUN_ID}/models_xgboost_mlflow'
-
-model = mlflow.pyfunc.load_model(logged_model)
+#logged_model = f'runs:/{RUN_ID}/model_pipeline' # uncomment if you want the run via mlflow tracking server
+logged_model = f's3://mlflow-ride-duration21-prediction-artifact-store/1/{RUN_ID}/artifacts/model_pipeline' #connected directly to model pipeline logged to aws s3 bucket
+model = mlflow.sklearn.load_model(logged_model)
 
 def prepare_features(ride):
     features = {}
@@ -21,7 +22,7 @@ def prepare_features(ride):
 
 def predict(features):
     pred = model.predict(features)
-    return pred[0]
+    return float(pred[0])
 
 app = Flask('duration-prediction')
 

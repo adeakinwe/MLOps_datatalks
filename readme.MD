@@ -31,7 +31,10 @@ pip install ipykernel
 python -m ipykernel install --user --name=mlflow-env --display-name "Experiment-tracking (mlflow311-venv)"
 pip install mlflow
 python -m mlflow ui --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5001
-#aws mlflow server --backend-store-uri sqlite:///mlflow3.db --default-artifact-root s3://mlflow-ride-duration21-prediction-artifact-store --host 127.0.0.1 --port 5003
+#aws mlflow server --backend-store-uri sqlite:///mlflow4.db --default-artifact-root s3://mlflow-ride-duration21-prediction-artifact-store --host 127.0.0.1 --port 5003
+
+# serve gunicorn
+gunicorn --bind=0.0.0.0:5005 predict_pipeline:app
 
 # download dataset
 curl -O "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-01.parquet"
